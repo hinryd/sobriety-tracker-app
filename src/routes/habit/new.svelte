@@ -49,7 +49,7 @@
 
   <p class="text-2xl">What type of habit is it?</p>
   <label class="flex items-center">
-    <input class="h-7 w-7 mr-2" type="radio" value="money" bind:group={habit.type} required />
+    <input class="h-7 w-7 mr-2" type="radio" value="money" bind:group={habit.type} />
     <span class="font-bold text-xl">Money</span>
   </label>
   <p class="text-sm">This habit costs you money. For example: smoking, drinking alcohol.</p>
@@ -61,7 +61,7 @@
     required
   />
   <label class="flex items-center">
-    <input class="h-7 w-7 mr-2" type="radio" value="time" bind:group={habit.type} required />
+    <input class="h-7 w-7 mr-2" type="radio" value="time" bind:group={habit.type} />
     <span class="font-bold text-xl">Time</span>
   </label>
   <p class="text-sm">
