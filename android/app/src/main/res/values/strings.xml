@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">sobriety-tracker-app</string>
+    <string name="title_activity_main">sobriety-tracker-app</string>
+    <string name="package_name">com.hinry.sobriety</string>
+    <string name="custom_url_scheme">com.hinry.sobriety</string>
+</resources>
