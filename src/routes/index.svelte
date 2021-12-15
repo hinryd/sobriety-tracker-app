@@ -5,17 +5,17 @@
 
 <Appbar title="Sobriety Tracker" />
 <main class="grid grid-cols-1 gap-6 p-6 z-0">
-  {#each $habits as habit}
+  {#each $habits as habit, id}
     <a
       class="relative rounded-xl shadow-md border border-gray-200 h-36 w-full p-4"
-      href={'/habit/' + habit.id}
+      href={'/habit/' + id}
     >
       <button class="absolute right-4 top-4">X</button>
       <h2 class="font-bold text-2xl">{habit.name}</h2>
     </a>
   {/each}
   <a
-    class="flex justify-center items-center rounded-xl shadow-md border border-gray-200 bg-gray-200 h-36 w-full text-gray-700"
+    class="flex justify-center items-center rounded-xl bg-gray-200 h-36 w-full text-gray-700 transition hover:shadow-md hover:border-gray-300 hover:scale-[1.02] active:shadow-md active:border-gray-300 active:scale-[1.02]"
     href="/habit/new"
   >
     <svg
