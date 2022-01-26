@@ -4,6 +4,6 @@ interface Habit {
   name: string;
   type: 'money' | 'time' | 'event';
   averageLoss: number;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: number;
+  history: number[];
 }

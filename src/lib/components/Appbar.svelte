@@ -7,9 +7,7 @@
   }
 </script>
 
-<header
-  class="sticky top-0 h-16 w-screen flex justify-between items-center px-6 shadow-lg bg-white"
->
+<header class="flex justify-between items-center px-7 h-16 shadow-md">
   {#if activeBackButton}
     <button on:click|preventDefault={goBack}
       ><svg

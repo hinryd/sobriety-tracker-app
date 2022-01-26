@@ -1,36 +1,28 @@
 <script lang="ts">
-  import Appbar from '$lib/Appbar.svelte';
-  import { habits } from '../../stores';
+  import Appbar from '$lib/components/Appbar.svelte';
+  import Check from '$lib/icons/Check.svelte';
+  import { Storage } from '@capacitor/storage';
 
   let habit: Habit = {
     name: '',
     type: 'money',
     averageLoss: null,
-    createdAt: new Date(),
-    updatedAt: new Date()
+    createdAt: Date.now(),
+    history: [Date.now()]
   };
 
-  function addHabit() {
-    habits.addHabit(habit);
+  async function addHabit() {
+    const habits = await Storage.get({ key: 'habits' }).then(
+      (habits) => JSON.parse(habits.value) ?? []
+    );
+    await Storage.set({ key: 'habits', value: JSON.stringify([...habits, habit]) });
     window.history.back();
   }
 </script>
 
 <Appbar title="New habit" activeBackButton={true}>
   <button type="submit" form="new_habit_form">
-    <svg
-      class="h-7 w-7"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      ><path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M5 13l4 4L19 7"
-      /></svg
-    >
+    <Check />
   </button>
 </Appbar>
 

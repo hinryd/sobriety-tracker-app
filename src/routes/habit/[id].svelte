@@ -11,8 +11,8 @@
 <script lang="ts">
   export let id: number;
 
-  import Appbar from '$lib/Appbar.svelte';
-  import { habits } from '../../stores';
+  import Appbar from '$lib/components/Appbar.svelte';
+  import habits from '$lib/stores/habits';
 
   let habit = $habits[id];
 </script>
